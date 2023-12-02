@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,
+        td {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+
+{% comment %} <body>
+    {% if app %}
+    <h4 class="text-center">Show you all appointment details </h4>
+    <br/>
+    <br/>
+
+        {% for a in request.user.user_requirement.a.all %}
+       <br>{{a}}</p> 
+     <h3>{{app}}</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            {% for ap in app %}
+            <td>{{ap.id}}</td>
+            <td>{{ap.fname}}</td>
+            <td>{{ap.date}}</td>
+            <td>{{ap.email}}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1>No Data</h1>
+    {% endif %}
+</body> {% endcomment %}
+
+<div class="container my-3 px-3">
+    <form>
+        <br/>
+        <br/> 
+        {% csrf_token %}
+        {% if app %}
+    <h4 class="text-center"><b>Show you all appointment details</b></h4>
+    <br/>
+    <br/>
+        <table class="table table-success table-striped ">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col"> Name </th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for ap in app %}
+                    <th scope="row">{{ap.id}}</th>
+                    <td>{{ap.fname}}</td>
+                    <td>{{ap.date}}</td>
+                    <td>{{ap.email}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            {% else %}
+            <h1>No Data</h1>
+            {% endif %}
+    </form>
+</div>
+
+</html>
+
+{% endblock content %}

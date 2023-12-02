@@ -1,0 +1,204 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="{% static 'css\bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css\style.css' %}" rel="stylesheet">
+  <title>
+    {% block title %}Happy Life Clinic{% endblock title %}</title>
+</head>
+{% comment %} {% csrf_token %} {% endcomment %}
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="{% static 'C:\Users\Hetal\OneDrive\Desktop\Clinic\static\images\Logo.jpg' %}" alt=""
+        width="30" height="24">&nbsp;
+      <a class="navbar-brand" href="#">Happy Life Clinic</a>
+      <div class="navbar-nav collapse navbar-collapse">
+        <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
+        <a class="nav-item nav-link" href="{% url 'appointment' %}">Book an appointment</a>
+        {% comment %} <a class="nav-item nav-link" href="{% url 'treatment' %}">Treatment</a>
+        <a class="nav-item nav-link" href="{% url 'events' %}">Events</a>
+        <a class="nav-item nav-link" href="{% url 'health' %}">Health</a> {% endcomment %}
+      </div>
+      {% comment %} {% if request.user.is_authenticated %}
+      <a class="nav-item nav-link" href="{% url 'manage' %}">Manage</a>
+      {% endif %}
+      <li class="nav-item nav-link">
+        <a class="nav-item nav-link" href="{% url 'manage' %}" style="float: left;cursor:pointer;" aria-expanded="true"
+          title="You Have 6 New Appointments">
+          <i class="far fa-bell" style="font-size: 20px; float: left; color: black">
+          </i>
+        </a>
+        <span class="badge badge-danger">{{count}}</span>
+      </li>
+    </div> {% endcomment %}
+    <div class="navbar-nav">
+      {% if user.is_authenticated %}
+      {% comment %} <a class="nav-item nav-link" href="{% url 'changePassword' %}">ChangePassword</a> {% endcomment %}
+      <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+      <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+      {% else %}
+      <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+      <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+      {% endif %}
+    </div>
+    </div>
+  </nav>
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </main>
+
+  {% block body %}{% endblock body %}
+  <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+  <!-- Footer -->
+  <!-- Right -->
+  <div>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-google"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="" class="me-4 text-reset">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="text-center p-4" style="background-color:rgba(0,0,0,0.05);">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Happy Life Clinic
+            </h6>
+            <p>
+              Our website is helping patients to get appointment online and track their records through it. . Doctor give
+              online prescription and health guidance . Doctor deals with the collection of patients information,
+              diagnosis details.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              About us
+            </h6>
+            <p>
+              <a href="/guidance" class="text-reset">Guidance</a>
+            </p>
+            <p>
+              <a href="/medicines" class="text-reset">Medicines</a>
+            </p>
+            <p>
+              <a href="/minerals" class="text-reset">Minerals</a>
+            </p>
+            <p>
+              <a href="/health" class="text-reset">Health</a>
+            </p>
+            <p>
+              <a href="/report" class="text-reset">Reports</a>
+            </p>
+            <p>
+              <a href="/feedback" class="text-reset">Feedback</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Timing
+            </h6>
+            <p>
+              <class="text-reset">Monady to Saturday
+            </p>
+            <p>
+              <class="text-reset">Morning Time: 10AM to 1PM </br></br>
+                Evening Time: 6PM to 9PM
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="bi bi-geo-alt-fill"></i></i>Address: C/12,Khodiyar Clinic Nr.Navrang School,Odhav Ahmedabad
+              382415</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              Email ID: dr.mukesh23@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i>Phone No.: +91 9586168999
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Links  -->
+
+  </footer>
+  <!-- Footer -->
+</body>
+
+</html>

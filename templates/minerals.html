@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Minerals{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid my-3 px-3">
+    <form>
+        {% csrf_token %}
+        <table class="table table-success table-striped">
+            <thead>
+                <h2 class="my-4 text-center">Mineral</h2>
+                <tr>
+                    <th class="text-center" >Mineral</th>
+                    <th class="text-center" colspan="2">RDA/AI</th>
+                    <th class="text-center">Best Sources</th>
+                    <th class="text-center">Function</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th>Men</th>
+                    <th>Women</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>calcium</td>
+                    <td>1,000mg</td>
+                    <td>1,000mg</td>
+                    <td>Milk and Milk products</td>
+                    <td>Stronge bones,teeth,muscle tissue</td>
+                </tr>
+                <tr>
+                    <td>Chromium</td>
+                    <td>35ug</td>
+                    <td>25ug</td>
+                    <td>corn oil,clams,whole-grain cereals</td>
+                    <td>Glucose metebolism</td>
+                </tr>
+                <tr>
+                    <td>Copper</td>
+                    <td>900ug</td>
+                    <td>900ug</td>
+                    <td>Oysters,nuts,organ meats</td>
+                    <td>Formation of red blood cells;bones growth and health; works with vitam C to form elastin</td>
+                </tr>
+                <tr>
+                    <td>Fluoride</td>
+                    <td>4mg</td>
+                    <td>3mg</td>
+                    <td>fluorinated water,teas,marine fish</td>
+                    <td>Stimulates bone Formation;inhibits or even reverse dental caries</td>
+                </tr>
+                <tr>
+                    <td>Iodine</td>
+                    <td>150ug</td>
+                    <td>150ug</td>
+                    <td>Seafood, iodized salt</td>
+                    <td>component of hormone thyroxine,which controls metabolism</td>
+                </tr>
+                <tr>
+                    <td>Iron</td>
+                    <td>8mg</td>
+                    <td>18mg</td>
+                    <td>Meats,especially organ meats,legumes</td>
+                    <td>Hemoglobin Formation;improves blood quality</td>
+                </tr>
+                <tr>
+                    <td>Magnesium</td>
+                    <td>420mg</td>
+                    <td>320mg</td>
+                    <td>Nuts,green vegetables,whole grains</td>
+                    <td>Acid/alkaline balance;important in metabolism of carbohydrates,minerals, and sugar(glucose)</td>
+                </tr>
+                <tr>
+                    <td>Manganese</td>
+                    <td>2.3mg</td>
+                    <td>1.8mg</td>
+                    <td>Nuts, whole grains,vegetables,fruits</td>
+                    <td>Enzyme activation;carbohydrate and fat production</td>
+                </tr>
+                <tr>
+                    <td>Molybdenum</td>
+                    <td>45ug</td>
+                    <td>45ug</td>
+                    <td>legumes,grain products,nuts</td>
+                    <td>Function as a cofactor for a limtied number of enzymes in humans</td>
+                </tr>
+                <tr>
+                    <td>Phosohorus</td>
+                    <td>700mg</td>
+                    <td>700mg</td>
+                    <td>fish,meat,poultry,eggs,grains</td>
+                    <td>Bone development;important in protein,fat,and carbohydrate utilization</td>
+                </tr>
+                <tr>
+                    <td>Potassium</td>
+                    <td>4700mg</td>
+                    <td>4700mg</td>
+                    <td>Lean meat,vegetables,fruits</td>
+                    <td>Fluid balance;controls activity of heart muscle</td>
+                </tr>
+                <tr>
+                    <td>Selenium</td>
+                    <td>55ug</td>
+                    <td>55ug</td>
+                    <td>Seafood,organ meats,lean meats,grains</td>
+                    <td>protects body tissues against oxidative damage from radiation</td>
+                </tr>
+                <tr>
+                    <td>Zinc</td>
+                    <td>11mg</td>
+                    <td>8mg</td>
+                    <td>Lean meats,liver,eggs,Seafood,grains</td>
+                    <td>Involved in digestion and metabolism</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="my-4">Take this advice but first of all consult your family doctor</h4>
+    </form>
+</div>
+
+
+{% endblock body %}

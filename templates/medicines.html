@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Medicine{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid my-3 px-3">
+    <form>
+        {% csrf_token %}
+        <table class="table table-success table-striped">
+            <thead>
+                <h2 class="my-4 text-center">Medicine</h2>
+                <tr>
+                    <th>Most common diseases</th>
+                    <th>Frequency(%)</th>
+                    <th>Most Frequent used medicines</th>
+                    <th>Frequency(%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fever</td>
+                    <td>377(39.7)</td>
+                    <td>Antibiotics</td>
+                    <td>347(36.6)</td>
+                </tr>
+                <tr>
+                    <td>Cough</td>
+                    <td>212(22.3)</td>
+                    <td>paracetamol</td>
+                    <td>289(31.5)</td>
+                </tr>
+                <tr>
+                    <td>Flu</td>
+                    <td>149(15.7)</td>
+                    <td>Cough syrup</td>
+                    <td>73(7.7)</td>
+                </tr>
+                <tr>
+                    <td>Diarrhea</td>
+                    <td>108(11.4)</td>
+                    <td>Metronidazole</td>
+                    <td>57(6.0)</td>
+                </tr>
+                <tr>
+                    <td>Rashes</td>
+                    <td>43(4.5)</td>
+                    <td>Anti Diarrhea</td>
+                    <td>29(3.1)</td>
+                </tr>
+                <tr>
+                    <td>Vomting</td>
+                    <td>34(3.6)</td>
+                    <td>Anti malaria</td>
+                    <td>25(2.6)</td>
+                </tr>
+                <tr>
+                    <td>Malaria</td>
+                    <td>15(1.6)</td>
+                    <td>vitamins</td>
+                    <td>14(1.5)</td>
+                </tr>
+                <tr>
+                    <td>Others</td>
+                    <td>11(1.2)</td>
+                    <td>Aspirin</td>
+                    <td>12(1.3)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Mefnamic Acid</td>
+                    <td>11(1.2)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Traditional Drug</td>
+                    <td>82(8.6)</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="my-4">Take this advice but first of all consult your family doctor</h4>
+
+    </form>
+</div>
+
+{% endblock body %}

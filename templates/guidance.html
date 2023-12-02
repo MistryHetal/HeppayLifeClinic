@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Guidance{% endblock title %}
+
+{% block body %}
+<div class="container-fluid my-3 px-3">
+    {% csrf_token %}
+    <table class="table table-success table-striped">
+        <thead>
+            <h2 class="my-4 text-center">Disease and their related advice</h2>
+            <tr>
+                <th>No.</th>
+                <th> Disease/Symptom </th>
+                <th>Prescribe</th>
+                <th>May not afford</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>Hypertension</td>
+                <td>Adelphane-E, Aten,Depin</td>
+                <td>Minipress-XL</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Minor infections</td>
+                <td>Septran Terramycin</td>
+                <td>Bacicox,Cephalosporins.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Pain</td>
+                <td>Brufen,Disprin</td>
+                <td>Tramadol.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>After stroke/IHD</td>
+                <td>Aspirin</td>
+                <td>Ticlopidine/ Clopidogrel/ Ecosprin</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Anemia</td>
+                <td>Fersolate</td>
+                <td>Liquid Iron Prep.s</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Amobiasis</td>
+                <td>Metronidazole</td>
+                <td>Secnidazole/Tinidazole</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Epilepsy</td>
+                <td>Dilantin</td>
+                <td>Tegretol</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Angina</td>
+                <td>Sorbitrate</td>
+                <td>Monotrate.Diltiazem</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Diabetes</td>
+                <td>Bovine Insulin</td>
+                <td>Human/Porcine insulins</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Infective hepatitis</td>
+                <td>liv52</td>
+                <td>Phospholipds</td>
+            </tr>
+        </tbody>
+    </table><br/><br/><br/><br/>
+    <table class="table table-success table-striped">
+        <thead>
+            <h2 class="my-4 text-center">Prescription</h2>
+            <tr>
+                <th>No.</th>
+                <th> Symptom </th>
+                <th>Drug to give</th>
+                <th>Do not give</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Pain, Fever</td>
+                <td>paracetamol, Aspirin</td>
+                <td>NSAIDS</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Colds, Cough</td>
+                <td>Plain expectorants</td>
+                <td>Codein</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Antibiotics</td>
+                <td>Penicillins</td>
+                <td>Sulphonamides</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Constipation</td>
+                <td>Isabgol, Liquid Paraffin</td>
+                <td>castor oil</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Dysentery</td>
+                <td>Kaolin</td>
+                <td>Diphenoxylate</td>
+            </tr>
+        </thead>
+    </table>
+    <h4 class="my-4">Take this advice but first of all consult your family doctor</h4>
+</div>
+
+{% endblock body %}

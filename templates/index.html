@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid my-4 px-0">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="static\images\HLC(2).jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Welcome to the Happy Life Clinic</h5>
+          <p>Stay Happy Stay Safe</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="static\images\welcome.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>WELCOME</h5>
+          <p>Go register login and book an appointment</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="static\images\register.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Registration Now</h5>
+          <p>Click on Registration link and Register now.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="static\images\Appointment.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Take Appointment</h5>
+          <p>Quickly take the Appointment and meet doctor that time schedule.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+
+<div class="container my-3 ">
+  <h1 class="my-4 text-center">Welcome </h1>
+
+  <div class="card-group">
+    <div class="card">
+      <img src="static\images\stethoscope.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">A Doctor is a person who helps to keep human health in healthy condition. Doctors help
+          patients to get relief from their pain. Doctors play a very essential role in human life. We can say Doctors
+          are the incarnation of the god.
+        </p>
+      </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="card">
+      <img src="static\images\patient_doctor.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">Doctors are responsible for increased life expectancy and improved well-being in society.
+          People who survive diseases such as cancer usually owe their survival to doctors, whose skills and dedication
+          are vital for their cure.
+        </p>
+      </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="card">
+      <img src="static\images\clinic(HLC).jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">A healthy lifestyle keeps you fit, energetic and at reduced risk for disease. According to
+          WHO, Healthy living is a way of living that helps you enjoy more aspects of your life. It is a way of living
+          that lowers the risk of being seriously ill or dying early. Health is not just about avoiding a disease or
+          illness.
+        </p>
+      </div>
+    </div>
+  </div><br/></br>
+  
+  <div class="text-center mb-2">
+    View Feedback
+    <a href="{% url 'ViewFeedback' %}">show here
+    </a><br /><br /><br />
+</div>
+</div>
+
+
+
+
+{% endblock body %}

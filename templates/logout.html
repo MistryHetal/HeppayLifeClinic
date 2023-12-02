@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="border-top pt-3">
+    <script>
+        alert("You are successfully logged out!!");
+    </script>
+    <small class="text-muted">
+        <a href="{% url 'login' %}">Log In Again</a>
+        <br />
+        <br />
+    </small>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+{% endblock content %}

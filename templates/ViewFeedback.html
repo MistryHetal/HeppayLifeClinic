@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<div class="container mt-5 mb-5">
+    <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="p-3">
+                    {% if app %}
+
+                </div>
+                <div class="mt-2">
+                    {% for ap in app %}
+
+                    <div class="d-flex flex-row p-3">
+                        <div class="w-100">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex flex-row align-items-center"> <span class="mr-2">
+                                        {% comment %} <h5>Email ID:&nbsp; &nbsp;{{ap.email}}</h5> {% endcomment %}
+                            <p class="text-justify comment-text mb-0"><b>Email ID:</b>&nbsp; &nbsp;{{ap.email}}</p>
+
+                                    </span>
+                                </div>
+                            </div>
+                            <p class="text-justify comment-text mb-0"><b>Comment:</b>&nbsp; &nbsp;{{ap.subject}}</p>
+                            <div class="d-flex flex-row user-feed"> <span class="ml-3"><i
+                                        class="fa fa-comments-o mr-2"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ap.datetime}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<h1>No Data</h1>
+{% endif %}
+
+</html>
+
+{% endblock content %}

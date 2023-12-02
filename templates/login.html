@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login Form</title>
+    <!-- Bootstrap core CSS -->
+    {% comment %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> {% endcomment %}
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    {% comment %} <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> {% endcomment %}
+    {% comment %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> {% endcomment %}
+
+</head>
+
+<style>
+    .card {
+        padding: 30px 40px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        border: none !important;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+    }
+
+    .blue-text {
+        color: #00BCD4
+    }
+
+    .form-control-label {
+        margin-bottom: 0
+    }
+
+    input,
+    textarea,
+    button {
+        padding: 8px 15px;
+        border-radius: 5px !important;
+        margin: 5px 0px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        font-size: 18px !important;
+        font-weight: 300
+    }
+
+    input:focus,
+    textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid #00BCD4;
+        outline-width: 0;
+        font-weight: 400
+    }
+
+    .btn-block {
+        text-transform: uppercase;
+        font-size: 15px !important;
+        font-weight: 400;
+        height: 43px;
+        cursor: pointer
+    }
+
+    .btn-block:hover {
+        color: #fff !important
+    }
+
+    button:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        outline-width: 0
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row px-3">
+            <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+                <div class="img-left d-none d-md-flex"></div>
+
+                <div class="card-body">
+                    <h4 class="title text-center mt-0">
+                        Login
+                    </h4>
+                    <br />
+                    <br />
+                    <form class="form-box px-3" method="post">
+                        {% csrf_token %}
+                        <div class="form-input">
+                            <span><i class="fa fa-envelope-o"></i></span>
+                            <label class="form-control-label px-3">Email<span class="text-danger">
+                                    *</span></label> &nbsp; &nbsp; &nbsp; &nbsp;
+                            <input type="email" name="email" placeholder="Email Address" tabindex="10" required>
+                        </div>
+                        <div class="form-input">
+                            <span><i class="fa fa-key"></i></span>
+                            <label class="form-control-label px-3">Password <span class="text-danger">
+                                    *</span></label>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-block text-uppercase">
+                                Login
+                            </button>
+                        </div>
+
+
+                        <div class="text-center mb-3">
+
+                        </div>
+
+                        <div class="row mb-3">
+                            <a href="/" class="btn btn-block btn-social btn-facebook">
+                                Back to Home
+                            </a>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="text-center mb-2">
+                            Don't have an account?
+                            <a href="{% url 'register' %}" class="register-link">
+                                Register here
+                            </a><br /><br /><br />
+                            Forget Password?
+                            <a href="/password_reset" class="register-link">
+                                Reset here
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if error == "no" %}
+    <script>
+        alert('Logged In Successfully');
+        window.location = ('{% url 'appointment' %}');
+    </script>
+    {% endif %}
+
+    {% if error == "yes" %}
+    <script>
+        alert('Invalid Credential, Try Again');
+    </script>
+    {% endif %}
+
+</body>
+
+</html>
+
+{% endblock content %}

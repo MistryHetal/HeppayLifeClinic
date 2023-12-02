@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Reports{% endblock title %}
+
+{% block body %}
+<div class="container-fluid my-3 px-3">
+    <form>
+        {% csrf_token %}
+        <table class="table table-success table-striped">
+            <thead>
+                <h2 class="my-4 text-center">Reports</h2>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col"> Disease/Symptom </th>
+                    <th scope="col">Reports</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Allergies</td>
+                    <td>blood reports</td>
+                </tr>
+                <tr>
+                    <th scope="row">2.</th>
+                    <td>cold and flu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">3.</th>
+                    <td>Conjunctivitis("pink eye")</td>
+                    <td>Recommened eye doctor</td>
+                </tr>
+                <tr>
+                    <th scope="row">4.</th>
+                    <td>Diarrhea</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">5.</th>
+                    <td>Headaches</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">6.</th>
+                    <td>Mononucleosis</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th scope="row">7.</th>
+                    <td>Stomach Aches</td>
+                    <td>sonography</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 class="my-4">Take this advice but first of all consult your family doctor</h4>
+    </form>
+</div>
+
+{% endblock body %}

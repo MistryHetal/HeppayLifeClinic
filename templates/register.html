@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+{% block content %}
+{% load static %}
+
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <title>Register Form</title>
+            <!-- Bootstrap core CSS -->
+            {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> {% endcomment %}
+            <link href="css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="css/styles.css" />
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            {% comment %} <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> {% endcomment %}
+
+        </head>
+
+        <style>
+            .card {
+                padding: 30px 40px;
+                margin-top: 60px;
+                margin-bottom: 60px;
+                border: none !important;
+                box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+            }
+
+            .blue-text {
+                color: #00BCD4
+            }
+
+            .form-control-label {
+                margin-bottom: 0
+            }
+
+            input,
+            textarea,
+            button {
+                padding: 8px 15px;
+                border-radius: 5px !important;
+                margin: 5px 0px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                font-size: 18px !important;
+                font-weight: 300
+            }
+
+            input:focus,
+            textarea:focus {
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+                border: 1px solid #00BCD4;
+                outline-width: 0;
+                font-weight: 400
+            }
+
+            .btn-block {
+                text-transform: uppercase;
+                font-size: 15px !important;
+                font-weight: 400;
+                height: 43px;
+                cursor: pointer
+            }
+
+            .btn-block:hover {
+                color: #fff !important
+            }
+
+            button:focus {
+                -moz-box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+                outline-width: 0
+            }
+        </style>
+
+        <body>
+            <div class="container">
+                <div class="row px-3">
+                    <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+                        <div class="img-left d-none d-md-flex"></div>
+
+                        <div class="card-body">
+                            <h4 class="title text-center mt-0">
+                                Register Form
+                            </h4>
+                            <br/>
+                            <br/>
+                            <form class="form-card" method="post">
+                                {% csrf_token %}
+                                <div class="form-input">
+                                    <span><i class="fa fa-user"></i></span>
+                                    <label class="form-control-label px-3">First name<span class="text-danger">
+                                        *</span></label> &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <input type="text" name="firstName" placeholder="Enter First Name" required>
+                                </div>
+
+                                <div class="form-input">
+                                    <span><i class="fa fa-user"></i></span>
+                                    <label class="form-control-label px-3">Last name<span class="text-danger">
+                                        *</span></label> &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <input type="text" name="lastName" placeholder="Enter Last Name" required>
+                                </div>
+
+                                <div class="form-input">
+                                    <span><i class="fa fa-envelope-o"></i></span>
+                                    <label class="form-control-label px-3">Email<span class="text-danger">
+                                        *</span></label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <input type="email" name="email" placeholder="Email Address" required>
+                                </div>
+
+                                <div class="form-input">
+                                    <span><i class="fa fa-key"></i></span>
+                                    <label class="form-control-label px-3">Password<span class="text-danger">
+                                        *</span></label>&nbsp; &nbsp; &nbsp; &nbsp;
+                                    <input type="password" name="password" placeholder="Password" required>
+                                </div>
+
+                                <div class="form-input">
+                                    <span><i class="fa fa-phone"></i></span>
+                                    <label class="form-control-label px-3">Contact No.<span class="text-danger">
+                                        *</span></label>&nbsp; &nbsp; &nbsp;
+                                    <input type="text" name="ContactNo" placeholder="Enter Contact No." maxlength="10"
+                                        required>
+                                </div>
+
+                                <div class="form-input">
+                                    <span><i class="fa fa-address-card"></i></span>
+                                    <label class="form-control-label px-3">About<span class="text-danger">
+                                        *</span></label>
+                                    <textarea name="About" placeholder="About...." required></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-block text-uppercase">
+                                        Submit
+                                    </button>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <a href="{% url 'index' %}" class="btn btn-block btn-social btn-facebook">
+                                        Back to Home
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if error == "no" %}
+            <script>
+                alert('Registration Successfully');
+                window.location = ('{% url 'login' %}');
+            </script>
+            {% endif %}
+
+            {% if error == "yes" %}
+            <script>
+                alert('Something went wrong, Try Again');
+            </script>
+            {% endif %}
+
+        </body>
+
+        </html>
+    </form>
+</div>
+{% endblock content %}
